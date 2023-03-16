@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage {pgfplots}
+\pgfplotsset{compat=1.8}
+\usepgfplotslibrary{statistics}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[ytick = {1,2,3},yticklabels = {Temp 1, Temp 2, Pages},]
+\addplot+[boxplot prepared={
+median=70,
+upper quartile=66,
+lower quartile=75,
+upper whisker=79,
+lower whisker=57},
+] coordinates {};
+\addplot+[boxplot prepared={
+median=70,
+upper quartile=66,
+lower quartile=75,
+upper whisker=81,
+lower whisker=57},
+] coordinates {};
+\addplot+[boxplot prepared={
+median=322,
+upper quartile=237,
+lower quartile=395,
+upper whisker=512,
+lower whisker=136},
+] coordinates {};
+\end{axis}
+\end{tikzpicture}
+\end{document}
